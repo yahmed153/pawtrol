@@ -1,2 +1,3 @@
 # Pawtrol 🐾
-Chrome extension to block malicious sites
+
+Chrome extension that uses crowdsourced data to block malicious sites

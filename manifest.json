@@ -1,0 +1,17 @@
+{
+  "name": "Pawtrol 🐾",
+  "description": "Extension that uses crowdsourced data to block malicious sites.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["webNavigation", "storage", "unlimitedStorage"],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "pawtrol.png"
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

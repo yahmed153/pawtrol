@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Warning: Unsafe Site</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #16213e;
+      border: 1px solid #e94560;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 520px;
+      text-align: center;
+    }
+    .icon { font-size: 48px; margin-bottom: 16px; }
+    h1 { color: #e94560; margin-bottom: 12px; font-size: 22px; }
+    .host { color: #f5a623; font-weight: bold; word-break: break-all; }
+    p { color: #aaa; margin-bottom: 24px; line-height: 1.5; }
+    .actions { display: flex; gap: 12px; justify-content: center; }
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-back { background: #0f3460; color: #fff; }
+    .btn-back:hover { background: #1a4a8a; }
+    .btn-proceed { background: #e94560; color: #fff; }
+    .btn-proceed:hover { background: #c23152; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">&#9888;</div>
+    <h1>Warning: This site may be unsafe</h1>
+    <p>
+      <span class="host" id="host"></span> is flagged as potentially malicious. Visiting this site could expose you to malware, phishing, or other threats.
+    </p>
+    <div class="actions">
+      <button class="btn-back" id="btn-back">Go back</button>
+      <button class="btn-proceed" id="btn-proceed">Proceed anyway</button>
+    </div>
+  </div>
+  <script src="warning.js"></script>
+</body>
+</html>

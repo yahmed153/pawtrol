@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>URL Safety Checker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      width: 260px;
+      padding: 16px;
+    }
+    h1 { font-size: 15px; margin-bottom: 12px; color: #fff; }
+    .stats { display: flex; gap: 12px; margin-bottom: 14px; }
+    .stat {
+      flex: 1;
+      background: #16213e;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    .stat-value { font-size: 20px; font-weight: bold; }
+    .stat-label { font-size: 10px; color: #888; margin-top: 2px; }
+    .stat-blocked .stat-value { color: #e94560; }
+    .stat-checked .stat-value { color: #00d2ff; }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-top: 1px solid #2a2a4a;
+    }
+    .toggle-row span { font-size: 13px; }
+    .toggle {
+      position: relative;
+      width: 40px;
+      height: 22px;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #333;
+      border-radius: 22px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 2px;
+      bottom: 2px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+    input:checked + .slider { background: #e94560; }
+    input:checked + .slider::before { transform: translateX(18px); }
+  </style>
+</head>
+<body>
+  <h1>URL Safety Checker</h1>
+  <div class="stats">
+    <div class="stat stat-checked">
+      <div class="stat-value" id="checked">0</div>
+      <div class="stat-label">Checked</div>
+    </div>
+    <div class="stat stat-blocked">
+      <div class="stat-value" id="blocked">0</div>
+      <div class="stat-label">Blocked</div>
+    </div>
+  </div>
+  <div class="toggle-row">
+    <span>Pause protection</span>
+    <label class="toggle">
+      <input type="checkbox" id="pause-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
